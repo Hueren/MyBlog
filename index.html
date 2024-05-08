@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- <title>🌹</title> -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+  <link rel="icon" href="https://notebook.js.org/images/favicon.ico">
+
+  <!-- <link rel="stylesheet" href="https://notebook.js.org/plugin/css/vue-1.css"> -->
+
+  <!-- 支持 LaTex 语言 -->
+  <link rel="stylesheet" href="https://notebook.js.org/plugin/css/katex.min.css" />
+  <link rel="stylesheet" href="https://wugenqiang.js.org/src/css/iconfont.css">
+  <link rel="stylesheet" href="https://notebook.js.org/plugin/custom.css">
+
+  <!-- alert -->
+  <link rel="stylesheet" href="https://notebook.js.org/plugin/sweetalert.min.css" type='text/css' media='all' />
+  <!-- 友链 -->
+  <link rel="stylesheet" href="https://notebook.js.org/plugin/css/friends-link.css">
+
+  <!-- 自定义特色样式：by myself -->
+  <link rel="stylesheet" href="https://notebook.js.org/plugin/css/me.css">
+
+  <!-- 自定义主题 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/buble.css"> -->
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dark.css"> -->
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/pure.css"> -->
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dolphin.css"> -->
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"> -->
+
+    <style>
+      /* 加重描述 strong*/
+      .markdown-section strong {
+        color: rgb(239, 112, 96);
+      }
+    
+      /* .app-nav {
+        position: fixed;
+        margin: 0;
+        /*padding: 10px 50px 10px 0;*/
+       /* padding: 10px 0 10px 0;
+        /*上、右、下、左*/
+       /* width: calc(100% - 325px);
+       
+        height: 55px;
+        border-bottom: 1px solid #eee;
+      }  */
+    
+      .github-corner{
+          position: absolute;
+          z-index: 999999;
+          top: 0;
+        }
+    
+      .markdown-section code {
+        border-radius: 2px;
+        font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+        font-size: 16px !important;
+        margin: 0 2px;
+        padding: 3px 5px;
+        white-space: nowrap;
+        border: 1px solid #282c34;
+        color: rgb(184, 101, 208);
+      }
+    
+      .markdown-section>div>img,
+      .markdown-section pre {
+        box-shadow: 2px 2px 20px 6px rgb(255, 255, 255) !important;
+      }
+    
+      .markdown-section a:not(:hover) {
+        text-decoration: none;
+      }
+    
+      /*侧边栏*/
+      .sidebar {
+        padding-top: 6px;
+      }
+    
+      aside.sidebar ul li {
+        margin: 0;
+        position: relative;
+      }
+    
+      aside.sidebar ul li ul {
+        margin: 6px 0;
+      }
+    
+      aside.sidebar ul li p {
+        padding-left: 22px;
+        font-size: 18px;
+        font-weight: normal;
+      }
+    
+      aside.sidebar ul li a {
+        line-height: 35px;
+        font-size: 14px;
+        padding: 3px 0 3px 22px;
+      }
+    
+      aside.sidebar ul li.active>a {
+        font-size: 16px !important;
+      }
+    
+      aside.sidebar ul li.active>a:before {
+        content: '' !important;
+        position: absolute !important;
+        margin: 0 !important;
+        width: 10px !important;
+        height: 10px !important;
+        top: 15px !important;
+        left: 0px !important;
+        border-radius: 50% !important;
+        background-color: #fed24a !important;
+        box-shadow: 0 0 0 3px rgba(254, 210, 74, 0.4) !important;
+      }
+    
+      /*以上调侧边栏*/
+    
+      /* h1 span {
+        display: inline-block;
+        background: rgb(66, 185, 131);
+        color: #ffffff;
+        padding: 10px 16px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 3px black;
+      } */
+    
+      /*代码块背景*/
+      p code {
+        background-color: rgba(26, 3, 3, 0.874) !important;
+      }
+    
+      .markdown-section p.tip,
+      .markdown-section tr:nth-child(1n) {
+        font-size: 16px !important;
+      }
+    
+      .markdown-section h1 {
+        margin: 3rem 0 2rem 0;
+      }
+    
+      .markdown-section h2 {
+        margin: 2rem 0 1rem;
+      }
+    
+      img,
+      pre {
+        border-radius: 5px;
+      }
+    
+      /*添加代码块复制按钮样式*/
+      .docsify-copy-code-button {
+        background: #f1f2f3 !important;
+        color: #090909 !important;
+        font-size: 11px !important;
+      }
+    
+      ::after {
+        color: #9da2fd !important;
+        font-size: 13px !important;
+      }
+    
+      .markdown-section>p {
+        font-size: 16px !important;
+      }
+    
+    
+      /* 代码块头部图标 start */
+      .markdown-section pre:before {
+        content: '';
+        display: block;
+        background: url(https://notebook.js.org/images/20220519-02-myinfo.png);
+        height: 30px;
+        background-size: 40px;
+        background-repeat: no-repeat;
+        background-color: #f3f2f2;
+        background-position: 10px 10px;
+      }
+    
+      /*代码块头部图标 end*/
+    
+      .markdown-section pre>code {
+        /* color: #c0c3c1 !important; */
+        font-family: 'Inconsolata', consolas, "PingFang SC", "Microsoft YaHei", monospace !important;
+        background-color: #212121 !important; 
+        font-size: 15px !important;
+        white-space: pre !important;
+        line-height: 1.5 !important;
+        -moz-tab-size: 4 !important;
+        -o-tab-size: 4 !important;
+        tab-size: 4 !important;
+        /*border-radius: .3em;*/
+      }
+    
+      ol,
+      ul,
+      li {
+        line-height: 27px !important;
+        font-size: 16px !important;
+      }
+    
+      @media (min-width:600px) {
+        .markdown-section pre>code {
+          font-size: 15px !important;
+          letter-spacing: 1.1px !important;
+        }
+    
+      }
+    
+      @media (max-width:600px) {
+        .markdown-section pre>code {
+          padding-top: 5px;
+          padding-bottom: 5px;
+          padding-left: 16px !important;
+        }
+    
+        pre:after {
+          content: "" !important;
+        }
+      }
+    
+      section.cover h1 {
+        margin: 0;
+      }
+    
+      pre {
+        background-color: #040404 !important;
+      }
+    
+      @media (min-width:600px) {
+        pre code {
+          /*box-shadow: 2px 1px 20px 2px #aaa;*/
+          /*border-radius: 10px !important;*/
+          padding-left: 20px !important;
+        }
+    
+      }
+    
+      @media (max-width:600px) {
+        pre {
+          padding-left: 3px !important;
+          padding-right: 3px !important;
+          margin-left: -20px !important;
+          margin-right: -20px !important;
+          box-shadow: 0px 0px 20px 0px #f7f7f7 !important;
+        }
+    
+        /*代码块复制按钮默认隐藏*/
+        .docsify-copy-code-button {
+          display: none;
+        }
+    
+        .advertisement {
+          display: none;
+        }
+    
+      }
+    
+      .markdown-section pre {
+        padding-left: 0 !important;
+        padding-right: 0px !important;
+      }
+    
+      .markdown-section {
+        margin: 0 3.2% !important;
+      }
+    
+      /*修改代码块代码颜色显示*/
+      .token.directive.keyword {
+        color: #4faee2 !important;
+      }
+    
+      .token.keyword {
+        color: #c678dd !important;
+      }
+    
+      .token.comment {
+        color: #737c8b !important;
+      }
+    
+      .token.tag {
+        color: #a589ad !important;
+      }
+    
+      .token.attr-name {
+        color: #de916c !important;
+      }
+    
+      .token.attr-value {
+        color: #4faee2 !important;
+      }
+    
+      .token.macro.property {
+        color: #4faee2 !important;
+      }
+    
+      .token.function {
+        color: #e6b456 !important;
+      }
+    
+      .token.string {
+        color: #98b755 !important;
+      }
+    
+      .token.punctuation {
+        color: #c0c3c1 !important;
+      }
+    
+      .token.number {
+        color: #c0c3c1 !important;
+      }
+    
+      a.section-link {
+        font-size: .9rem !important;
+      }
+    
+      .advertisement {
+        position: fixed;
+        right: 20px;
+        top: 100px;
+        width: 110px;
+        box-shadow: -1px 0 2px 0px #c5ebda;
+        padding: 10px;
+        z-index: 99;
+        background-color: #fff;
+        text-align: center;
+      }
+    
+      .advertisement p,
+      h4 {
+        margin: 0;
+        padding: 0;
+      }
+    
+      .advertisement .Tencent_code h4 {
+        font-size: 15px;
+        color: #25a46a;
+        margin-bottom: 10px;
+      }
+    
+      /*滚动条样式 start*/
+      /* 滚动条宽度 */
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+    
+      /* 滚动条颜色 */
+      ::-webkit-scrollbar-thumb {
+        background: #33a9dc;
+        background-image: linear-gradient(#6ecd56, #33a9dc, #cb6196, #c16290);
+        border-radius: 2em;
+      }
+    </style>
+
+</head>
+
+<body>
+  <div id="app">🏃‍🏃‍🏃‍💨 加载中...</div>
+
+  <script>
+
+    window.$docsify = {
+      
+      name: "<p>🌈 Hueren' NoteBook</p>",
+      nameLink: 'https://notebook.js.org/',
+      repo: 'https://gitee.com/hueren/projects',
+      logo: '',
+      loadSidebar: true,//开启侧边栏定制，加载_sidebar.md
+      maxLevel: 4,
+      subMaxLevel: 0,
+      loadNavbar: true,
+      alias: {
+        '/.*/_navbar.md': '/_navbar.md',//防止意外回退
+        //  '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      // 开启封面,加载_coverpage.md
+      coverpage: true,
+      onlyCover: true,
+      auto2top: true,
+      topMargin: 90,
+      search: {
+        maxAge: 864000000,
+        noData: '找不到结果',
+        paths: 'auto',
+        placeholder: { '/': '搜索' },
+        depth: 8,
+      },
+      // homepage:'README.md',
+      formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}:{ss}',
+      // plugins: [
+      //   /*来必力评论*/
+      //   function (hook, vm) {
+      //     // load livere
+      //     hook.beforeEach(function (content) {
+      //       var comment = "<div id='lv-container' data-id='city' data-uid='MTAyMC80MzA4MC8xOTYyNg=='></div>\n\n----\n"
+      //       return content + comment;
+      //     });
+
+      //     hook.doneEach(function () {
+      //       (function (d, s) {
+      //         var j, e = d.getElementsByTagName(s)[0];
+      //         if (typeof LivereTower === 'function') { return; }
+      //         j = d.createElement(s);
+      //         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      //         j.async = true;
+      //         e.parentNode.insertBefore(j, e);
+      //       })(document, 'script');
+      //     });
+      //   },
+      // ],
+
+      plugins: [
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            var url = 'https://gitee.com/hueren/docs/blob/master/' + vm.route.file
+            var editHtml = '[📝 编辑文本](' + url + ')\n'
+            var editHtml_end = '[🖊 Edit Document](' + url + ')\n'
+            return editHtml
+              + html
+              + '\n----\n'
+              + '> Last Modified {docsify-updated} '
+              + editHtml_end
+          });
+              
+        },
+       
+
+      ],
+      // 外链表达式
+      externalLinkTarget: '_blank',
+
+      // 谷歌分析 SEO
+      ga: 'UA-164658031-2',
+
+      footer: {
+        //copy: '<div class = "over" >完结</div><br/><span>我能想到最浪漫的事，就是我喝咖啡你付钱~😆😏 ❤️ 打赏地址：<a href="https://wugenqiang.js.org/sponsor/" target="_blank">https://wugenqiang.js.org/sponsor/</a></span><iframe src="https://wugenqiang.js.org/sponsor/" style="overflow-x:hidden;overflow-y:hidden; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe><br/><span id="sitetime"></span><br/><span>Copyright &copy; 2019 - 至今</span>',
+        copy: '<div class = "over" >完结</div><br/><br/><span id="sitetime"></span><br/><span>Copyright &copy; 2023 - 至今</span>',
+        auth: ' <a href="https://wugenqiang.github.io/" target="_blank">🏷️ EnjoyToShare </a> <span> 一个人可以走的很快，但一群人才能走的更远！</span>',
+        pre: '<hr/>',
+        style: 'text-align: left;',
+      },//添加页脚
+
+      markdown: {
+        renderer: {
+          code: function (code, lang, base = null) {
+
+            if (lang === "dot") {
+              return (
+                '<div class="viz">' + Viz(code, "SVG") + '</div>'
+              );
+            }
+
+            var pdf_renderer = function (code, lang, verify) {
+              function unique_id_generator() {
+                function rand_gen() {
+                  return Math.floor((Math.random() + 1) * 65536).toString(16).substring(1);
+                }
+                return rand_gen() + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + rand_gen() + rand_gen();
+              }
+              if (lang && !lang.localeCompare('pdf', 'en', { sensitivity: 'base' })) {
+                if (verify) {
+                  return true;
+                } else {
+                  var divId = "markdown_code_pdf_container_" + unique_id_generator().toString();
+                  var container_list = new Array();
+                  if (localStorage.getItem('pdf_container_list')) {
+                    container_list = JSON.parse(localStorage.getItem('pdf_container_list'));
+                  }
+                  container_list.push({ "pdf_location": code, "div_id": divId });
+                  localStorage.setItem('pdf_container_list', JSON.stringify(container_list));
+                  return (
+                    '<div style="margin-top:' + PDF_MARGIN_TOP + '; margin-bottom:' + PDF_MARGIN_BOTTOM + ';" id="' + divId + '">'
+                    + '<a href="' + code + '"> Link </a> to ' + code +
+                    '</div>'
+                  );
+                }
+              }
+              return false;
+            }
+            if (pdf_renderer(code, lang, true)) {
+              return pdf_renderer(code, lang, false);
+            }
+            //return this.origin.code.apply(this, arguments);
+            return (base ? base : this.origin.code.apply(this, arguments));
+          }
+        }
+      },
+    }
+  </script>
+
+
+
+
+
+
+  <!-- 回到顶部功能 -->
+  <script src="https://notebook.js.org/plugin/jquery.js"></script>
+  <script src="https://notebook.js.org/plugin/jquery.goup.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $.goup({
+        trigger: 100,
+        bottomOffset: 32,
+        locationOffset: 32,
+        title: 'TOP',
+        titleAsText: true
+      });
+    });
+  </script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf_viewer.min.css" />
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script> -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+
+  <!-- PDFObject.js is a required dependency of this plugin -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>
+
+  <!-- docsify-pdf-embed.js  -->
+  <script src="//unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+
+
+  <!-- 添加 PDF 页面展示功能 -->
+
+  <script src="https://notebook.js.org/plugin/pdfobject.min.js"></script>
+
+  <script src="https://notebook.js.org/plugin/docsify-pdf-embed.js"></script>
+
+  <!-- 字数统计 -->
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+
+  <!-- 图片缩放 -->
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+
+  <!-- 复制到剪贴板 -->
+  <script src="//unpkg.com/docsify-copy-code"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+
+
+  <!-- mouse click -->
+  <script src="//cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/click_heart.js"></script>
+
+
+  <!-- 添加页脚 -->
+  <script src="https://notebook.js.org/plugin/docsify-footer-enh.min.js"></script>
+
+  <!-- 代码块样式优化-->
+  <script src="https://notebook.js.org/plugin/prism-c.js"></script>
+  <!--<script src="//unpkg.com/prismjs/components/prism-cpp.js"></script>-->
+  <script src="https://notebook.js.org/plugin/prism-cpp.js"></script>
+  <script src="https://notebook.js.org/plugin/prism-css.js"></script>
+  <script src="https://notebook.js.org/plugin/prism-docker.js"></script>
+  <script src="https://notebook.js.org/plugin/prism-java.js"></script>
+  <script src="https://notebook.js.org/plugin/prism-javascript.js"></script>
+  <script src="https://notebook.js.org/plugin/prism-json.js"></script>
+  <script src="https://notebook.js.org/plugin/prism-latex.js"></script>
+  <script src="https://notebook.js.org/plugin/prism-sql.js"></script>
+  <script src="https://notebook.js.org/plugin/prism-markdown.js"></script>
+  <script src="https://notebook.js.org/plugin/prism-bash.min.js"></script>
+  <script src="https://notebook.js.org/plugin/prism-php.min.js"></script>
+  <script src="https://notebook.js.org/plugin/prism-scala.min.js"></script>
+  <script src="https://notebook.js.org/plugin/prism-nginx.min.js"></script>
+  <script src="https://notebook.js.org/plugin/prism-json.min.js"></script>
+  <script src="https://notebook.js.org/plugin/prism-markdown.min.js"></script>
+  <script src="https://notebook.js.org/plugin/prism-python.js"></script>
+  <script src="https://notebook.js.org/plugin/js/prism-yaml.js"></script>
+  <script src="https://notebook.js.org/plugin/js/prism-go.js"></script>
+  <script src="https://notebook.js.org/plugin/js/prism-matlab.js"></script>
+
+  <!-- 添加网站运行时间统计 -->
+  <script language=javascript>
+    function siteTime() {
+      window.setTimeout("siteTime()", 1000);
+      var seconds = 1000;
+      var minutes = seconds * 60;
+      var hours = minutes * 60;
+      var days = hours * 24;
+      var years = days * 365;
+      var today = new Date();
+      var todayYear = today.getFullYear();
+      var todayMonth = today.getMonth() + 1;
+      var todayDate = today.getDate();
+      var todayHour = today.getHours();
+      var todayMinute = today.getMinutes();
+      var todaySecond = today.getSeconds();
+      /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+      year - 作为date对象的年份，为4位年份值
+      month - 0-11之间的整数，做为date对象的月份
+      day - 1-31之间的整数，做为date对象的天数
+      hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+      minutes - 0-59之间的整数，做为date对象的分钟数
+      seconds - 0-59之间的整数，做为date对象的秒数
+      microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+      var t1 = Date.UTC(2023, 05, 5, 18, 00, 00); //北京时间2019-06-21 22:22:22 //计划考研的日子，6月20日毕业典礼结束后，人生需要继续努力，加油，看到这句话的朋友们！
+      var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+      var diff = t2 - t1;
+      var diffYears = Math.floor(diff / years);
+      var diffDays = Math.floor((diff / days) - diffYears * 365);
+      var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+      var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+      var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+      document.getElementById("sitetime").innerHTML = " 本站已安全运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分 " + diffSeconds + " 秒 ";
+    }
+    siteTime();
+  </script>
+
+  <!-- <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+  <script>
+    L2Dwidget.init({
+      "model": {
+        //jsonpath控制显示那个小萝莉模型，
+        //(切换模型需要改动)
+        jsonPath: "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
+        "scale": 1
+      },
+      "display": {
+        "position": "right", //看板娘的表现位置
+        "width": 70,  //小萝莉的宽度
+        "height": 140, //小萝莉的高度
+        "hOffset": 35,
+        "vOffset": -20
+      },
+      "mobile": {
+        "show": true,
+        "scale": 0.5
+      },
+      "react": {
+        "opacityDefault": 0.7,
+        "opacityOnHover": 0.2
+      }
+    });
+  </script> -->
+
+
+  <!-- 访问量统计 -->
+  <script async src="https://notebook.js.org/plugin/js/busuanzi.pure.mini.js"></script>
+
+  <!-- 谷歌分析 -->
+  <script src="https://notebook.js.org/plugin/js/ga.min.js"></script>
+
+  <!-- 实现离线化 -->
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('pwa.js')
+    }
+  </script>
+
+</body>
+
+</html>
